@@ -18,6 +18,12 @@ class cartOutput extends StatelessWidget {
             Text('Nama Lengkap: ${controller.namalengkap.value}'),
             Text('Tempat Lahir: ${controller.tempatlahir.value}'),
             Text('Tanggal Lahir: ${controller.selectedDate.value}'),
+             Obx(() {
+                              return Text(
+                                "Age: ${controller.age}",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              );
+                            }),
             Text('Gender: ${controller.gender.value}'),
             Text('Email: ${controller.email.value}'),
             Text('Negara: ${controller.negara.value}'),
@@ -25,6 +31,7 @@ class cartOutput extends StatelessWidget {
             Text('Nomor Kartu: ${controller.nomorkartu.value}'),
             Text('Tanggal Expired: ${controller.tanggalExpired.value}'),
             Text('Harga Member: ${controller.totalHarga.value}'),
+            Text('Benefit: ${controller.benefit.value}'),
           ],
         ),
       ),
