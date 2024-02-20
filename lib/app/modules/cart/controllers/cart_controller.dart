@@ -4,9 +4,10 @@ import 'package:intl/intl.dart';
 import '../views/cart_output.dart';
 
 class CartController extends GetxController {
-   var namalengkap = ''.obs;
+  var namalengkap = ''.obs;
   var tempatlahir = ''.obs;
   var tanggallahir = ''.obs;
+  var gender = ''.obs;
   var email = ''.obs;
   var negara = ''.obs;
   var nomorkartu = ''.obs;
@@ -40,7 +41,6 @@ class CartController extends GetxController {
       selectedDate.value = formattedDate;
     }
   }
-
 
   Future<void> expiredDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -77,7 +77,7 @@ class CartController extends GetxController {
 
   void submitForm() {
     print(
-        'Data Formulir: $namalengkap, $tempatlahir, $tanggallahir, $email, $negara, ${selectedMember.value}, Total Harga: ${totalHarga.value}, $nomorkartu, $tanggalExpired');
+        'Data Formulir: $namalengkap, $tempatlahir, $tanggallahir, $email, $gender, $negara, ${selectedMember.value}, Total Harga: ${totalHarga.value}, $nomorkartu, $tanggalExpired');
     isFormSubmitted.value = true;
     Get.to(cartOutput());
   }
