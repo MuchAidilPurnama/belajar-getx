@@ -60,7 +60,7 @@ class RegisterController extends GetxController {
           .value, // Ubah dengan variabel name yang sesuai dengan implementasi Anda
       'email': email.value,
       'password': password.value,
-      'password_confirmation': confirmPassword.value,
+      'password_confirmation': confirmPassword.value
     };
 
     return await http.post(
@@ -70,7 +70,7 @@ class RegisterController extends GetxController {
     );
   }
 
-   void _saveUserData(Map<String, dynamic> responseBody) async {
+  void _saveUserData(Map<String, dynamic> responseBody) async {
     // Implementation for saving user data to SharedPreferences
     // This could be similar to what you did in the LoginController
   }

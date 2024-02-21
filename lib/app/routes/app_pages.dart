@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:learn_getx/app/middlewares/auth_middleware.dart';
 
+import '../middlewares/auth_middleware.dart';
 import '../modules/biodata/bindings/biodata_binding.dart';
 import '../modules/biodata/views/biodata_view.dart';
 import '../modules/cart/bindings/cart_binding.dart';
@@ -25,15 +25,21 @@ class AppPages {
 
   static final routes = [
     GetPage(
-      name: _Paths.HOME,
-      page: () => HomeView(),
-      binding: HomeBinding(),
-      middlewares: [AuthMiddleware()],
-    ),
+        name: _Paths.HOME,
+        page: () => HomeView(),
+        binding: HomeBinding(),
+        middlewares: [AuthMiddleware()]),
     GetPage(
       name: _Paths.PROFILE,
       page: () => const ProfileView(),
       binding: ProfileBinding(),
+      children: [
+        GetPage(
+          name: _Paths.PROFILE,
+          page: () => const ProfileView(),
+          binding: ProfileBinding(),
+        ),
+      ],
     ),
     GetPage(
       name: _Paths.COUNTER,
@@ -52,13 +58,14 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.LOGIN,
-      page: () =>  LoginView(),
+      page: () => LoginView(),
       binding: LoginBinding(),
     ),
     GetPage(
       name: _Paths.REGISTER,
-      page: () =>  RegisterView(),
+      page: () => RegisterView(),
       binding: RegisterBinding(),
     ),
+    
   ];
 }
