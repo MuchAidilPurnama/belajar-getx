@@ -93,20 +93,6 @@ class LoginView extends GetView<LoginController> {
                         SizedBox(
                           height: 16,
                         ),
-                        TextButton(
-                          onPressed: () {
-                            Get.toNamed("/register");
-                          },
-                          child: Text(
-                            "Belum punya akun? Daftar disini",
-                            style: TextStyle(
-                              color: Colors.blue,
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 16,
-                        ),
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.8,
                           height: MediaQuery.of(context).size.height * 0.075,
@@ -125,7 +111,21 @@ class LoginView extends GetView<LoginController> {
                               onPressed: () {
                                 controller.login();
                               }),
-                        )
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Get.toNamed("/register");
+                          },
+                          child: Text(
+                            "Belum punya akun? Daftar disini",
+                            style: TextStyle(
+                              color: Colors.blue,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 16,
+                        ),
                       ],
                     ),
                   ),

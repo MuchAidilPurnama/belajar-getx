@@ -10,6 +10,8 @@ abstract class Routes {
   static const CART = _Paths.CART;
   static const LOGIN = _Paths.LOGIN;
   static const REGISTER = _Paths.REGISTER;
+  static const PASIEN = _Paths.PASIEN;
+  static const KATEGORI = _Paths.KATEGORI;
 }
 
 abstract class _Paths {
@@ -21,4 +23,12 @@ abstract class _Paths {
   static const CART = '/cart';
   static const LOGIN = '/login';
   static const REGISTER = '/register';
+  static const PASIEN = '/pasien';
+  static const KATEGORI = '/kategoris';
+  static const String TambahKategori = '/tambah-kategoris';
+  static const String EditKategori = '/edit-kategoris';
+  static const String ShowKategori = '/edit-kategoris';
+  static const String TambahPasien = '/tambah-pasien';
+  static const String EditPasien = '/edit-pasien';
+  static const String DetailPasien = '/edit-pasien';
 }

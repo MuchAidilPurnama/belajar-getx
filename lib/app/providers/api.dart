@@ -3,7 +3,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 class Api {
   static final String baseUrl = 'http://localhost:8000/api';
 
-  
   static final String loginEndpoint = '$baseUrl/login';
   static final String registerEndpoint = '$baseUrl/register';
   // static final String userEndpoint = '$baseUrl/user';
