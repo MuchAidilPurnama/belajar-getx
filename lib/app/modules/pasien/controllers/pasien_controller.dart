@@ -30,7 +30,7 @@ class PasienController extends GetxController {
       );
 
       if (response.statusCode == 200) {
-        Iterable jsonResponse = json.decode(response.body)['data'];
+        Iterable jsonResponse = json.decode(response.body);
         pasienList
             .assignAll(jsonResponse.map((model) => Pasien.fromJson(model)));
       } else {
@@ -74,10 +74,10 @@ class PasienController extends GetxController {
         },
       );
 
-      if (response.statusCode == 201) {
+      if (response.statusCode == 200) {
         Get.snackbar('Sukses', 'Pasien berhasil ditambahkan');
         fetchData();
-        Get.offAndToNamed(Routes.HOME); // Redirect ke halaman pasien
+        Get.offAndToNamed(Routes.PASIEN); // Redirect ke halaman pasien
       } else {
         throw Exception('Failed to add pasien');
       }

@@ -12,6 +12,7 @@ abstract class Routes {
   static const REGISTER = _Paths.REGISTER;
   static const PASIEN = _Paths.PASIEN;
   static const KATEGORI = _Paths.KATEGORI;
+  static const BOTTOM_MENU = _Paths.BOTTOM_MENU;
 }
 
 abstract class _Paths {
@@ -31,4 +32,5 @@ abstract class _Paths {
   static const String TambahPasien = '/tambah-pasien';
   static const String EditPasien = '/edit-pasien';
   static const String DetailPasien = '/edit-pasien';
+  static const BOTTOM_MENU = '/bottom-menu';
 }

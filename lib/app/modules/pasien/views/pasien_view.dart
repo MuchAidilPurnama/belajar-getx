@@ -1,6 +1,7 @@
 // pasien_view.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:learn_getx/app/modules/pasien/views/create_pasien_view.dart';
 import '../../../data/models/pasien_model.dart';
 import '../controllers/pasien_controller.dart';
 import 'edit_pasien_view.dart';
@@ -19,7 +20,7 @@ class PasienView extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.add),
             onPressed: () {
-              Get.toNamed('/tambah-pasien');
+              Get.to(() => TambahPasienView());
             },
           ),
         ],

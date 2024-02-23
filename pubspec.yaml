@@ -28,11 +28,11 @@ dev_dependencies:
 flutter: 
   uses-material-design: true
   assets:
-    - assets/images/splash.png
+    - assets/images/to.png
 
 flutter_native_splash:
-  color: "#42a5f5"
-  image: assets/images/splash.png
+  color: "#fafbfc"
+  image: assets/images/to.png
   android: true
   ios: true
 

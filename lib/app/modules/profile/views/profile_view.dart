@@ -5,7 +5,9 @@ import 'package:get/get.dart';
 import '../controllers/profile_controller.dart';
 
 class ProfileView extends GetView<ProfileController> {
-  const ProfileView({Key? key}) : super(key: key);
+  ProfileController controller = Get.put(ProfileController());
+
+  ProfileView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,27 +21,28 @@ class ProfileView extends GetView<ProfileController> {
           )
         ],
       ),
-      body: Obx(() => controller.isLoading.value
-          ? Center(child: CircularProgressIndicator())
-          : Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 8),
-                  Text(
-                    'Nama: ${controller.user['name']}',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  SizedBox(height: 8),
-                  Text(
-                    'Email: ${controller.user['email']}',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                ],
+      body: Obx(
+        () => controller.isLoading.value
+            ? Center(child: CircularProgressIndicator())
+            : Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 8),
+                    Text(
+                      'Nama: ${controller.user['name']}',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      'Email: ${controller.user['email']}',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ],
+                ),
               ),
-              ),
-              ),
+      ),
     );
   }
 }
