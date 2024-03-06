@@ -66,11 +66,11 @@ class PasienController extends GetxController {
         Uri.parse(apiUrl),
         headers: headers,
         body: {
-          'nama': nama,
-          'jenis_kelamin': jenisKelamin,
-          'alamat': alamat,
-          'tgl_lahir': tglLahir,
-          'no_telp': noTelp,
+           "nama": nama,
+           "jenis_kelamin": jenisKelamin,
+           "alamat": alamat,
+           "tgl_lahir": tglLahir,
+           "no_telp": noTelp,
         },
       );
 
@@ -79,6 +79,7 @@ class PasienController extends GetxController {
         fetchData();
         Get.offAndToNamed(Routes.PASIEN); // Redirect ke halaman pasien
       } else {
+        print(response.statusCode);
         throw Exception('Failed to add pasien');
       }
     } catch (e) {
@@ -132,6 +133,9 @@ class PasienController extends GetxController {
       }
     } catch (e) {
       print('Error during edit pasien: $e');
+      // if (e is http.Response) {
+      //   print('Response Body: ${e.body}');
+      // }
     }
   }
 
